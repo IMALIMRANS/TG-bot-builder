@@ -1,0 +1,11 @@
+name = "group-control-bot-builder"
+main = "index.js"
+compatibility_date = "2024-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tggroupbot"
+database_id = "dfbe2a7d-57d6-4766-81d2-6885124a7597"
+
+[triggers]
+crons = ["* * * * *"]
