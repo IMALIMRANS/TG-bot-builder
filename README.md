@@ -1,10 +1,10 @@
-# Group Control Bot Builder
-1. `wrangler login` → `wrangler d1 create gcbb` → database_id কপি করে wrangler.toml-এ বসান
-2. `wrangler d1 execute gcbb --remote --file=schema.sql`
-3. `wrangler deploy`
-4. `https://<worker>/x/adme` → Main Admin তৈরি → Login → "Main Bot" ট্যাবে Token দিয়ে Connect & Auto Setup
-5. Main Bot-এ `/start`
+# Group Control Bot Builder (database: tggroupbot)
 
-## নোট
-- আগের ভার্সন থেকে আপডেট করলে `schema.sql` আবার চালান (`CREATE TABLE IF NOT EXISTS`, ডেটা মুছবে না)।
-- Cron (প্রতি মিনিটে): Cooldown permission ফেরত, Auto Post, Broadcast queue (২৫টি/মিনিট), VIP মেয়াদ ও পুরনো session পরিষ্কার।
+1. `wrangler login`
+2. `wrangler d1 create tggroupbot`  → copy the `database_id` into `wrangler.toml`
+3. `wrangler d1 execute tggroupbot --remote --file=schema.sql`
+4. `wrangler deploy`
+5. Open `https://<worker>/x/adme` → create the Main Admin → log in → "Main Bot" tab → paste the bot token → Connect & Auto Setup
+6. In the Main Bot send `/start`. Send `/x/adme` to get the Admin Panel button.
+
+Cron runs every minute: auto posts, broadcast queue, VIP expiry, cleanup.
